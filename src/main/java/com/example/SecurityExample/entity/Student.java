@@ -27,7 +27,7 @@ public class Student {
             strategy = GenerationType.SEQUENCE
     )
     @Column(name = "id")
-    private UUID id;
+    private Long id;
 
     @Column(name = "name")
     private String name;
