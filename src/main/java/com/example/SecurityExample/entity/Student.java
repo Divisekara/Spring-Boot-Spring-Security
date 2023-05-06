@@ -15,11 +15,26 @@ import java.util.UUID;
 @AllArgsConstructor
 @Table(name = "student")
 public class Student {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @Id // used for PK
+//    @GeneratedValue(strategy = GenerationType.UUID)
+    @SequenceGenerator(
+            name = "student_sequence",
+            allocationSize = 1,
+            sequenceName = "student_sequence"
+    )
+    @GeneratedValue(
+            generator = "student_sequence",
+            strategy = GenerationType.SEQUENCE
+    )
     @Column(name = "id")
     private UUID id;
 
     @Column(name = "name")
     private String name;
 }
+
+/*
+
+
+
+ * */
