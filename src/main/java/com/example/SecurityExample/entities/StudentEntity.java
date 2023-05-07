@@ -1,20 +1,16 @@
-package com.example.SecurityExample.entity;
+package com.example.SecurityExample.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import java.util.UUID;
+import lombok.*;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "student")
-public class Student {
+@Builder
+@Table(name = "students")
+public class StudentEntity {
     @Id // used for PK
 //    @GeneratedValue(strategy = GenerationType.UUID)
     @SequenceGenerator(
@@ -31,10 +27,7 @@ public class Student {
 
     @Column(name = "name")
     private String name;
+
+    @Column(name = "age")
+    private Integer age;
 }
-
-/*
-
-
-
- * */
